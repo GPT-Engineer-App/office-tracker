@@ -27,6 +27,7 @@ const Index = () => {
   return (
     <Box p={5}>
       <Image src="https://via.placeholder.com/1200x300?text=Office" alt="Office" mb={4} borderRadius="md" />
+      <Image src="https://via.placeholder.com/150x50?text=Company+Logo" alt="Company Logo" mb={4} />
       <Heading mb={4}>Team Attendance Tracker</Heading>
       <Stack spacing={4}>
         {teamMembers.map((member) => (
