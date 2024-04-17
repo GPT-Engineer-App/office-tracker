@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Stack, Text, useToast } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Stack, Text, useToast } from "@chakra-ui/react";
 import { FaBuilding, FaHome } from "react-icons/fa";
 
 const Index = () => {
@@ -26,6 +26,7 @@ const Index = () => {
 
   return (
     <Box p={5}>
+      <Image src="https://via.placeholder.com/1200x300?text=Office" alt="Office" mb={4} borderRadius="md" />
       <Heading mb={4}>Team Attendance Tracker</Heading>
       <Stack spacing={4}>
         {teamMembers.map((member) => (
