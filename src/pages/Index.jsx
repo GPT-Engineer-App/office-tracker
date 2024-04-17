@@ -6,10 +6,10 @@ const Index = () => {
 
   // Placeholder data for team members
   const teamMembers = [
-    { id: 1, name: "Alice Johnson", status: "Remote" },
-    { id: 2, name: "Bob Smith", status: "In Office" },
-    { id: 3, name: "Charlie Davis", status: "Remote" },
-    { id: 4, name: "Dana Lee", status: "In Office" },
+    { id: 1, name: "Alice Johnson", status: "Remote", city: "New York" },
+    { id: 2, name: "Bob Smith", status: "In Office", city: "San Francisco" },
+    { id: 3, name: "Charlie Davis", status: "Remote", city: "Chicago" },
+    { id: 4, name: "Dana Lee", status: "In Office", city: "Los Angeles" },
   ];
 
   // Function to update status
@@ -31,7 +31,9 @@ const Index = () => {
         {teamMembers.map((member) => (
           <Flex key={member.id} align="center" justify="space-between" p={3} borderWidth="1px" borderRadius="lg">
             <Text fontWeight="bold">{member.name}</Text>
-            <Text>{member.status}</Text>
+            <Text>
+              {member.status} - {member.city}
+            </Text>
             <Button leftIcon={member.status === "In Office" ? <FaHome /> : <FaBuilding />} colorScheme={member.status === "In Office" ? "red" : "green"} onClick={() => updateStatus(member.id, member.status === "In Office" ? "Remote" : "In Office")}>
               Mark as {member.status === "In Office" ? "Remote" : "In Office"}
             </Button>
