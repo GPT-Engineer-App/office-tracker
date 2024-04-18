@@ -17,6 +17,10 @@ const theme = extendTheme({
     initialColorMode: "light",
     useSystemColorMode: false,
   },
+  fonts: {
+    heading: "Manrope, sans-serif",
+    body: "Manrope, sans-serif",
+  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
