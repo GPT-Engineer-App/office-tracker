@@ -1,4 +1,5 @@
-import { Box, Button, Flex, Heading, Image, Stack, Text, useToast } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Stack, Text, useToast, useColorMode, IconButton } from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { FaBuilding, FaHome } from "react-icons/fa";
 
 const Index = () => {
@@ -24,8 +25,11 @@ const Index = () => {
     });
   };
 
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <Box p={5}>
+    <Box p={5} bg={colorMode === "light" ? "gray.100" : "gray.700"} color={colorMode === "light" ? "black" : "white"}>
+      <IconButton aria-label="Toggle theme" icon={colorMode === "light" ? <FaMoon /> : <FaSun />} onClick={toggleColorMode} position="absolute" top="1rem" right="1rem" />
       <Image src="https://via.placeholder.com/1200x300?text=Office" alt="Office" mb={4} borderRadius="md" />
       <Heading mb={4}>Team Attendance Tracker</Heading>
       <Stack spacing={4}>
